@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { login, loginWithGoogle } from './actions'
 
 export default function LoginPage() {
   return (
@@ -35,7 +35,7 @@ export default function LoginPage() {
           </div>
 
           <button
-            type="submit"
+            formAction={login}
             className="w-full p-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-semibold transition"
           >
             Sign In
@@ -53,7 +53,7 @@ export default function LoginPage() {
         {/* Google Button */}
         <form>
           <button
-            type="submit"
+            formAction={loginWithGoogle}
             className="w-full p-3 border border-gray-700 hover:bg-gray-800 text-white rounded-lg font-medium transition flex items-center justify-center gap-3"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24">
@@ -81,9 +81,9 @@ export default function LoginPage() {
         {/* Sign Up Link */}
         <p className="text-center mt-6 text-sm text-gray-500">
           Don&apos;t have an account?{" "}
-          <Link href="/auth/register" className="text-purple-400 hover:text-purple-300">
+          <a href="/auth/register" className="text-purple-400 hover:text-purple-300">
             Create one
-          </Link>
+          </a>
         </p>
       </div>
     </div>
